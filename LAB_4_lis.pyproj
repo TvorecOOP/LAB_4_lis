@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>8822CC64-4D7C-40E6-AF60-A017FA663FC2</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>LAB_4_lis.py</StartupFile>
+    <SearchPath>.</SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>LAB_4_lis</Name>
+    <RootNamespace>LAB_4_lis</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>Pytest</TestFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="LAB_4_lis.py" />
+    <Compile Include="exceptions.py" />
+    <Compile Include="tasks\__init__.py" />
+    <Compile Include="tasks\task1.py" />
+    <Compile Include="tasks\task2.py" />
+    <Compile Include="tasks\task2_parallel.py" />
+    <Compile Include="tasks\task3.py" />
+    <Compile Include="gui\__init__.py" />
+    <Compile Include="gui\app.py" />
+    <Compile Include="tests\__init__.py" />
+    <Compile Include="tests\test_tasks.py" />
+    <Compile Include="tests\test_parallel.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bats\install.bat" />
+    <Content Include="bats\run_gui.bat" />
+    <Content Include="bats\run_tests.bat" />
+    <Content Include="requirements.txt" />
+    <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="gui\" />
+    <Folder Include="bats\" />
+    <Folder Include="tasks\" />
+    <Folder Include="tests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.10</Version>
+      <Description>env (Python 3.10.6)</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
